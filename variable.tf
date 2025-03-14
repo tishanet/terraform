@@ -1,23 +1,41 @@
+variable aws_region {
+  type        = string
+  default     = "us-east-1"
+}
+variable aws_az {
+  type        = string
+  default     = "us-east-1a"
+}
 variable cidr_blocks {
   description = "cidr block for vpc and subnets"
   type = list(string)
-  default = ["10.0.0.0/16", "10.0.1.0/24", "172.32.3.0/24"]
+}
+variable env_prefix {
+  type        = string
+  default     = "test"
+  description = "testing env"
 }
 
-/*variable dev-vpc_cidr_block {
-  type    = string
-  default = "10.0.0.0/16"
-  description = "CIDR block for dev-vpc"
+variable ip_ssh_accsess {
+  type = list(string)
+  description = "list of IPs for SSH access"
 }
 
-variable dev-subnet-1_cidr_block {
-  type    = string
-  default = "10.0.1.0/24"
-  description = "CIDR block for vpc_dev-subnet"
+variable ami_owner {
+   type = list(string)
+   description = "AMI owner"
 }
 
-variable app-dev-subnet-1_cidr_block {
+variable instance_type {
+  type = string
+}
+
+variable key-pair {
   type    = string
-  default = "172.32.3.0/24"
-  description = "CIDR block for vpv_app-dev "
-}*/
+  default     = "my-server"
+}
+
+variable public_key_locaion {
+  type = string
+}
+
